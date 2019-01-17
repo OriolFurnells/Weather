@@ -1,0 +1,32 @@
+.search{
+	
+}
+
+.ciudadesFijas{
+	padding:80px;
+	display:flex;
+	justify-content: space-between;
+	text-align: center;
+	font-size: 26px;
+}
+
+
+.padre{
+	
+}
+
+.found{
+	display:flex;
+}
+
+.found div{
+	
+	font-size: 20px;
+}
+
+.modal-header{
+	font-size: 48px;
+	
+}
+
+.modal

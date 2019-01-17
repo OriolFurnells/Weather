@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
+</head>
+
+<body>
+
+	<div id="app">
+		<div>
+			<div class="ciudadesFijas">
+				<span @click="busqueda(ciudades[0],ciudades)"> {{ciudades[0]}} </span>
+				<span @click="busqueda(ciudades[1],ciudades)"> {{ciudades[1]}}</span>
+				<span @click="busqueda(ciudades[2],ciudades)"> {{ciudades[2]}}</span>
+			</div>
+			<div class="ciudadesFijas">
+				<span @click="busqueda(ciudades[3],ciudades)"> {{ciudades[3]}} </span>
+				<span class="search"> 
+					<input type="text" placeholder="ciudad" id="city"> 
+					<button type="button" @click="busqueda(citySearch, ciudades)" data-toggle="modal" data-target="#myModal">Buscar</button>
+				</span>
+				<span> {{ciudades[4]}} </span>
+			</div>
+
+			<div class="ciudadesFijas">
+				<span @click="busqueda(ciudades[5],ciudades)"> {{ciudades[5]}} </span>
+				<span @click="busqueda(ciudades[6],ciudades)"> {{ciudades[6]}} </span>
+				<span @click="busqueda(ciudades[7],ciudades)"> {{ciudades[7]}} </span>
+			</div>
+		</div>
+
+		
+			<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div> {{citySearch}}</div>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body  found">
+						<div> 
+						<div> Temperatura actual: {{temperaturaC}}</div>
+						<div> Maxima: {{tempMaxC}}</div>
+						<div> Minima: {{tempMinC}}</div>
+						<div> {{skyNew}} </div>
+						</div>
+						<div v-if="skyNew==='Lluvioso'">
+							<img src="../images/lluvia_2.gif"> 
+						</div>
+						<div v-if ="skyNew==='Despejado'">
+							<img src="../images/despejado.gif"> 
+							
+						</div>
+						<div v-if ="skyNew==='Nublado'">
+							<img src="../images/nube.gif">
+							
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<script src="../js/app.js"></script>
+
+</body>
+
+</html>
